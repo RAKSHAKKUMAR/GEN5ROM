@@ -284,7 +284,7 @@ p.desc {
 /* Viewer container */
 .spline-container {
   margin-top: 40px;
-  width: min(1100px, 100%);
+  width: min(1220px, 100%);
   aspect-ratio: 16 / 9;
   margin-inline: auto;
   border-radius: 16px;
