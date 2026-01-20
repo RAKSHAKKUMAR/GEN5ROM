@@ -284,7 +284,7 @@ p.desc {
 /* Viewer container */
 .spline-container {
   margin-top: 40px;
-  width: min(1220px, 100%);
+  width: min(1300px, 100%);
   aspect-ratio: 16 / 9;
   margin-inline: auto;
   border-radius: 16px;
@@ -562,14 +562,14 @@ spline-viewer {
   }
 }
 
-/* TOOL CARD SECTION */
+/* TOOL CARD SECTION
 .tools-cards {
   padding: 80px 80px;
   display: flex;
   justify-content: center;
 }
 
-/* CARD */
+CARD
 .tool-card {
   width: 420px;
   padding: 36px;
@@ -588,7 +588,7 @@ spline-viewer {
   will-change: transform;
 }
 
-/* ICON */
+ // ICON
 .tool-icon {
   width: 44px;
   height: 44px;
@@ -597,20 +597,20 @@ spline-viewer {
   background: linear-gradient(135deg, var(--accent2), var(--accent1));
 }
 
-/* TITLE */
+TITLE
 .tool-card h3 {
   font-size: 26px;
   margin-bottom: 12px;
 }
 
-/* DESCRIPTION */
+DESCRIPTION
 .tool-desc {
   color: #9ca3af;
   line-height: 1.6;
   margin-bottom: 22px;
 }
 
-/* LIST */
+LIST
 .tool-list {
   list-style: none;
   padding: 0;
@@ -631,7 +631,7 @@ spline-viewer {
   font-weight: 700;
 }
 
-/* RESPONSIVE */
+RESPONSIVE
 @media (max-width: 600px) {
   .tools-cards {
     padding: 60px 24px;
@@ -639,7 +639,8 @@ spline-viewer {
   .tool-card {
     width: 100%;
   }
-}
+} 
+*/
 
 
 /* SECTION */
