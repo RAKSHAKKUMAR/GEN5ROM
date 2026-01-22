@@ -1,15 +1,43 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Harnarayan Portfolio</title>
+    <!-- For standard .ico -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/assets/Screenshot 2026-01-22 113618.png"
+    />
+
+    <!-- For .png -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/Screenshot 2026-01-22 113618.png"
+    />
+
+    <!-- For SVG -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/assets/Screenshot 2026-01-22 113618.png"
+    />
+
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header class="navbar">
       <div class="navbar-left">
-        <div class="logo-badge">Gen5</div>
+        <div class="logo-badge">
+          <img
+            src="/assets/Screenshot 2026-01-22 113618.png"
+            alt="logo"
+            class="logo-img"
+          />
+        </div>
         <div class="logo-text">
           <h4>Harnarayan</h4>
           <p>Creative Visual Artist</p>
@@ -17,17 +45,17 @@
       </div>
 
       <nav class="navbar-center">
-        <a href="#3d">Spline 3d</a>
+        <a href="#services">Services</a>
         <a href="#work">Work</a>
         <a href="#about">About</a>
       </nav>
 
       <div class="navbar-right">
         <a href="#contact">
-        <button class="btn-outline" >✉ Contact</button>
+          <button class="btn-outline">✉ Contact</button>
         </a>
         <a href="">
-        <button class="btn-gradient">⬇ Resume</button>
+          <button class="btn-gradient">⬇ Resume</button>
         </a>
       </div>
     </header>
@@ -48,13 +76,19 @@
         <div class="ctas">
           <button
             class="cta-primary"
-            onclick="document.getElementById('work').scrollIntoView({behavior:'smooth'})"
+            onclick="
+              document
+                .getElementById('work')
+                .scrollIntoView({ behavior: 'smooth' })
+            "
           >
             View My Work ➜
           </button>
           <button
             class="cta-ghost"
-            onclick="location.href='mailto:hello@example.com?subject=Work%20Inquiry'"
+            onclick="
+              location.href = 'mailto:hello@example.com?subject=Work%20Inquiry'
+            "
           >
             Let's Talk
           </button>
@@ -92,30 +126,40 @@
     </main>
 
     <!-- Spline 3d Work -->
-     <section class="spline-section" id="3d">
-  <header class="spline-header">
-    <h2>Interactive <span>3D</span> Showcase</h2>
-    <p>Explore the 3D keyboard model — interact, rotate, and zoom in real-time.</p>
-  </header>
+    <section class="spline-section" id="3d">
+      <header class="spline-header">
+        <h2>Interactive <span>3D</span> Showcase</h2>
+        <p>
+          Explore the 3D keyboard model — interact, rotate, and zoom in
+          real-time.
+        </p>
+      </header>
 
-  <div class="spline-container">
-    <spline-viewer
-      url="https://prod.spline.design/bCzuLFEqzOSbl9ic/scene.splinecode"
-      aria-label="Interactive 3D keyboard model"
-    ></spline-viewer>
-  </div>
+      <div class="spline-container">
+        <spline-viewer
+          url="https://prod.spline.design/bCzuLFEqzOSbl9ic/scene.splinecode"
+          aria-label="Interactive 3D keyboard model"
+        ></spline-viewer>
+      </div>
 
-  <noscript>
-    <p class="no-js-message">
-      JavaScript is required to view the interactive 3D scene.
-      <a href="https://my.spline.design/keyboard-G4DWOODrKmnKa3TCfuHMiOCE/" target="_blank" rel="noopener">View on Spline →</a>
-    </p>
-  </noscript>
-</section>
+      <noscript>
+        <p class="no-js-message">
+          JavaScript is required to view the interactive 3D scene.
+          <a
+            href="https://my.spline.design/keyboard-G4DWOODrKmnKa3TCfuHMiOCE/"
+            target="_blank"
+            rel="noopener"
+            >View on Spline →</a
+          >
+        </p>
+      </noscript>
+    </section>
 
-<!-- Place script at bottom or in your global layout -->
-<script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.37/build/spline-viewer.js"></script>
-
+    <!-- Place script at bottom or in your global layout -->
+    <script
+      type="module"
+      src="https://unpkg.com/@splinetool/viewer@1.12.37/build/spline-viewer.js"
+    ></script>
 
     <section class="info-section">
       <div class="info-container">
@@ -136,8 +180,10 @@
         <div class="info-card">
           <div class="info-icon">📍</div>
           <p class="info-label">Location</p>
-          <h4 class="info-text">Sangam Vihar, <br>
-            New Delhi</h4>
+          <h4 class="info-text">
+            Sangam Vihar, <br />
+            New Delhi
+          </h4>
         </div>
 
         <div class="info-card">
@@ -148,7 +194,7 @@
       </div>
     </section>
 
-    <section class="services">
+    <section class="services" id="services">
       <header class="services-header">
         <h2>What I <span>Offer</span></h2>
         <p>
@@ -184,7 +230,7 @@
             <li>Explainer videos</li>
             <li>Social media content</li>
             <li>Broadcast graphics</li>
-            <li>Animated infographics and product feature </li>
+            <li>Animated infographics and product feature</li>
           </ul>
         </article>
 
@@ -205,7 +251,7 @@
       </div>
     </section>
 
-     <!-- <section class="tools-cards">
+    <!-- <section class="tools-cards">
   <article class="tool-card js-tool-card">
     <div class="tool-icon">🎨</div>
 
@@ -221,270 +267,264 @@
   </article>
 </section> -->
 
-
     <section class="work" id="work">
-  <header class="work-header">
-    <h2>Featured <span>Work</span></h2>
-    <p>A selection of projects that showcase my creative range</p>
-  </header>
+      <header class="work-header">
+        <h2>Featured <span>Work</span></h2>
+        <p>A selection of projects that showcase my creative range</p>
+      </header>
 
-  <div class="work-controls">
-    <div class="filters">
-      <button class="filter active" data-filter="all">All Work</button>
-      <button class="filter" data-filter="video">Video Editing</button>
-      <button class="filter" data-filter="motion">Motion Graphics</button>
-      <button class="filter" data-filter="design">Graphic Design</button>
-    </div>
-
-    <input
-      type="text"
-      class="search"
-      placeholder="Search projects..."
-    />
-  </div>
-
-  <div class="work-grid">
-
-    <!-- CARD -->
-    <article class="work-card video">
-      <div class="thumb">
-        <span class="play">▶</span>
-      </div>
-      <h3>Brand Launch Campaign</h3>
-      <p>High-energy product launch video for tech startup</p>
-      <div class="tags">
-        <span>Commercial</span>
-        <span>Product</span>
-        <span>Social Media</span>
-      </div>
-    </article>
-
-    <article class="work-card motion">
-      <div class="thumb">
-        <span class="play">▶</span>
-      </div>
-      <h3>Animated Logo Reveal</h3>
-      <p>Premium 3D logo animation for corporate brand</p>
-      <div class="tags">
-        <span>Motion Design</span>
-        <span>Branding</span>
-        <span>3D</span>
-      </div>
-    </article>
-
-    <article class="work-card design">
-      <div class="thumb">
-        <span class="play">▶</span>
-      </div>
-      <h3>Social Media Templates</h3>
-      <p>Complete Instagram feed redesign with templates</p>
-      <div class="tags">
-        <span>Design</span>
-        <span>Social Media</span>
-        <span>Templates</span>
-      </div>
-    </article>
-
-    <article class="work-card video">
-      <div class="thumb">
-        <span class="play">▶</span>
-      </div>
-      <h3>YouTube Documentary Edit</h3>
-      <p>45-minute documentary with advanced storytelling</p>
-      <div class="tags">
-        <span>Documentary</span>
-        <span>Long-form</span>
-        <span>YouTube</span>
-      </div>
-    </article>
-
-    <article class="work-card motion">
-      <div class="thumb">
-        <span class="play">▶</span>
-      </div>
-      <h3>Explainer Animation</h3>
-      <p>SaaS product explainer with custom illustrations</p>
-      <div class="tags">
-        <span>Explainer</span>
-        <span>Animation</span>
-        <span>Corporate</span>
-      </div>
-    </article>
-
-    <article class="work-card design">
-      <div class="thumb">
-        <span class="play">▶</span>
-      </div>
-      <h3>Event Poster Series</h3>
-      <p>Music festival promotional materials</p>
-      <div class="tags">
-        <span>Poster</span>
-        <span>Event</span>
-        <span>Print</span>
-      </div>
-    </article>
-  </div>
-</section>
-
-<section class="about" id="about">
-  <div class="about-container">
-
-    <!-- LEFT CONTENT -->
-    <div class="about-content">
-      <h2>About <span>Me</span></h2>
-
-      <p>
-        I’m a Delhi-based motion graphic designer and video editor with 1+ years of experience creating cinematic visuals and engaging digital stories. I work with After Effects, Premiere Pro, and DaVinci Resolve to deliver polished motion graphics, edits, and audio-synced content.
-      </p>
-
-      <p>
-       I combine technical skill with creative storytelling and a sharp eye for detail. I enjoy collaborating with teams and brands, delivering high-quality work with fast turnaround, and I’m available for freelance, contract, and full-time roles.
-      </p>
-
-      <!-- STATS -->
-      <div class="stats">
-        <div class="stat-card">
-          <span class="stat-icon">🏆</span>
-          <h3>20+</h3>
-          <p>Projects Completed</p>
+      <div class="work-controls">
+        <div class="filters">
+          <button class="filter active" data-filter="all">All Work</button>
+          <button class="filter" data-filter="video">Video Editing</button>
+          <button class="filter" data-filter="motion">Motion Graphics</button>
+          <button class="filter" data-filter="design">Graphic Design</button>
         </div>
 
-        <div class="stat-card">
-          <span class="stat-icon">👥</span>
-          <h3>5+</h3>
-          <p>Happy Clients</p>
-        </div>
-
-        <div class="stat-card">
-          <span class="stat-icon">☕</span>
-          <h3>1+</h3>
-          <p>Years Experience</p>
-        </div>
-
-        <div class="stat-card">
-          <span class="stat-icon">❤️</span>
-          <h3>100%</h3>
-          <p>Client Satisfaction</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- RIGHT PROFILE CARD -->
-    <div class="about-card">
-      <div class="avatar">Gen5</div>
-      <h4>Harnarayan</h4>
-      <p>Creative Visual Artist</p>
-    </div>
-
-  </div>
-</section>
-
-<section class="contact" id="contact">
-  <header class="contact-header">
-    <h2>Let's Work <span>Together</span></h2>
-    <p>
-      Have a project in mind? I'd love to hear about it.
-      Drop me a message and let's create something amazing.
-    </p>
-  </header>
-
-  <div class="contact-grid">
-
-    <!-- LEFT -->
-    <div class="contact-info">
-      <h3>Get In Touch</h3>
-
-      <div class="info-card">
-        <div class="icon">✉</div>
-        <div>
-          <span>Email</span>
-          <strong>narayansingh28489@gmail.com</strong>
-        </div>
+        <input type="text" class="search" placeholder="Search projects..." />
       </div>
 
-      <div class="info-card">
-        <div class="icon">📞</div>
-        <div>
-          <span>Phone</span>
-          <strong>+91 7503875055</strong>
+      <div class="work-grid">
+        <!-- CARD -->
+        <article class="work-card video">
+          <div class="thumb">
+            <span class="play">▶</span>
+          </div>
+          <h3>Brand Launch Campaign</h3>
+          <p>High-energy product launch video for tech startup</p>
+          <div class="tags">
+            <span>Commercial</span>
+            <span>Product</span>
+            <span>Social Media</span>
+          </div>
+        </article>
+
+        <article class="work-card motion">
+          <div class="thumb">
+            <span class="play">▶</span>
+          </div>
+          <h3>Animated Logo Reveal</h3>
+          <p>Premium 3D logo animation for corporate brand</p>
+          <div class="tags">
+            <span>Motion Design</span>
+            <span>Branding</span>
+            <span>3D</span>
+          </div>
+        </article>
+
+        <article class="work-card design">
+          <div class="thumb">
+            <span class="play">▶</span>
+          </div>
+          <h3>Social Media Templates</h3>
+          <p>Complete Instagram feed redesign with templates</p>
+          <div class="tags">
+            <span>Design</span>
+            <span>Social Media</span>
+            <span>Templates</span>
+          </div>
+        </article>
+
+        <article class="work-card video">
+          <div class="thumb">
+            <span class="play">▶</span>
+          </div>
+          <h3>YouTube Documentary Edit</h3>
+          <p>45-minute documentary with advanced storytelling</p>
+          <div class="tags">
+            <span>Documentary</span>
+            <span>Long-form</span>
+            <span>YouTube</span>
+          </div>
+        </article>
+
+        <article class="work-card motion">
+          <div class="thumb">
+            <span class="play">▶</span>
+          </div>
+          <h3>Explainer Animation</h3>
+          <p>SaaS product explainer with custom illustrations</p>
+          <div class="tags">
+            <span>Explainer</span>
+            <span>Animation</span>
+            <span>Corporate</span>
+          </div>
+        </article>
+
+        <article class="work-card design">
+          <div class="thumb">
+            <span class="play">▶</span>
+          </div>
+          <h3>Event Poster Series</h3>
+          <p>Music festival promotional materials</p>
+          <div class="tags">
+            <span>Poster</span>
+            <span>Event</span>
+            <span>Print</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="about-container">
+        <!-- LEFT CONTENT -->
+        <div class="about-content">
+          <h2>About <span>Me</span></h2>
+
+          <p>
+            I’m a Delhi-based motion graphic designer and video editor with 1+
+            years of experience creating cinematic visuals and engaging digital
+            stories. I work with After Effects, Premiere Pro, and DaVinci
+            Resolve to deliver polished motion graphics, edits, and audio-synced
+            content.
+          </p>
+
+          <p>
+            I combine technical skill with creative storytelling and a sharp eye
+            for detail. I enjoy collaborating with teams and brands, delivering
+            high-quality work with fast turnaround, and I’m available for
+            freelance, contract, and full-time roles.
+          </p>
+
+          <!-- STATS -->
+          <div class="stats">
+            <div class="stat-card">
+              <span class="stat-icon">🏆</span>
+              <h3>20+</h3>
+              <p>Projects Completed</p>
+            </div>
+
+            <div class="stat-card">
+              <span class="stat-icon">👥</span>
+              <h3>5+</h3>
+              <p>Happy Clients</p>
+            </div>
+
+            <div class="stat-card">
+              <span class="stat-icon">☕</span>
+              <h3>1+</h3>
+              <p>Years Experience</p>
+            </div>
+
+            <div class="stat-card">
+              <span class="stat-icon">❤️</span>
+              <h3>100%</h3>
+              <p>Client Satisfaction</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT PROFILE CARD -->
+        <div class="about-card">
+          <div class="avatar">Gen5</div>
+          <h4>Harnarayan</h4>
+          <p>Creative Visual Artist</p>
         </div>
       </div>
+    </section>
 
-      <div class="info-card">
-        <div class="icon">📷</div>
-        <div>
-          <span>Instagram</span>
-          <a href="https://www.instagram.com/gen5.rom/" target="_blank" rel="noopener noreferrer">
-  <strong>gen5.rom</strong>
-</a>
-
-        </div>
-      </div>
-
-      <div class="availability">
-        <h4>Current Availability</h4>
+    <section class="contact" id="contact">
+      <header class="contact-header">
+        <h2>Let's Work <span>Together</span></h2>
         <p>
-          I'm currently accepting new projects.
-          Let's discuss your vision!
+          Have a project in mind? I'd love to hear about it. Drop me a message
+          and let's create something amazing.
         </p>
-        <span class="status">● Available for hire</span>
+      </header>
+
+      <div class="contact-grid">
+        <!-- LEFT -->
+        <div class="contact-info">
+          <h3>Get In Touch</h3>
+
+          <div class="info-card">
+            <div class="icon">✉</div>
+            <div>
+              <span>Email</span>
+              <strong>narayansingh28489@gmail.com</strong>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="icon">📞</div>
+            <div>
+              <span>Phone</span>
+              <strong>+91 7503875055</strong>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="icon">📷</div>
+            <div>
+              <span>Instagram</span>
+              <a
+                href="https://www.instagram.com/gen5.rom/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <strong>gen5.rom</strong>
+              </a>
+            </div>
+          </div>
+
+          <div class="availability">
+            <h4>Current Availability</h4>
+            <p>
+              I'm currently accepting new projects. Let's discuss your vision!
+            </p>
+            <span class="status">● Available for hire</span>
+          </div>
+        </div>
+
+        <!-- RIGHT -->
+        <form class="contact-form">
+          <label>
+            Your Name
+            <input type="text" placeholder="Rakshak" />
+          </label>
+
+          <label>
+            Email Address
+            <input type="email" placeholder="rakshak@example.com" />
+          </label>
+
+          <label>
+            Project Brief
+            <textarea placeholder="Tell me about your project..."></textarea>
+          </label>
+
+          <button type="submit">✈ Send Message</button>
+        </form>
       </div>
-    </div>
+    </section>
 
-    <!-- RIGHT -->
-    <form class="contact-form">
-      <label>
-        Your Name
-        <input type="text" placeholder="Rakshak">
-      </label>
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand-badge">Gen5</div>
+          <div class="brand-text">
+            <h4>Harnarayan</h4>
+            <p>Motion Graphics Designer · Video Editor</p>
+          </div>
+        </div>
 
-      <label>
-        Email Address
-        <input type="email" placeholder="rakshak@example.com">
-      </label>
+        <div class="footer-center">
+          Crafted with <span class="heart">♥</span> © 2024 All rights reserved
+        </div>
 
-      <label>
-        Project Brief
-        <textarea placeholder="Tell me about your project..."></textarea>
-      </label>
-
-      <button type="submit">
-        ✈ Send Message
-      </button>
-    </form>
-
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="footer-top">
-
-    <div class="footer-brand">
-      <div class="brand-badge">Gen5</div>
-      <div class="brand-text">
-        <h4>Harnarayan</h4>
-        <p>Motion Graphics Designer · Video Editor</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="YouTube">▶</a>
+        </div>
       </div>
-    </div>
 
-    <div class="footer-center">
-      Crafted with <span class="heart">♥</span> © 2024 All rights reserved
-    </div>
-
-    <div class="footer-social">
-      <a href="#" aria-label="Instagram">📷</a>
-      <a href="#" aria-label="LinkedIn">in</a>
-      <a href="#" aria-label="YouTube">▶</a>
-    </div>
-
-  </div>
-
-  <div class="footer-bottom">
-    This portfolio showcases professional creative work.
-    All project examples are placeholders and can be replaced with actual work.
-  </div>
-</footer>
+      <div class="footer-bottom">
+        This portfolio showcases professional creative work. All project
+        examples are placeholders and can be replaced with actual work.
+      </div>
+    </footer>
     <script src="script.js"></script>
-    
   </body>
 </html>
