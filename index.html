@@ -267,104 +267,72 @@
   </article>
 </section> -->
 
-    <section class="work" id="work">
-      <header class="work-header">
-        <h2>Featured <span>Work</span></h2>
-        <p>A selection of projects that showcase my creative range</p>
-      </header>
+   <section class="work" id="work">
+  <header class="work-header">
+    <h2>Featured <span>Work</span></h2>
+    <p>A selection of projects that showcase my creative range</p>
+  </header>
 
-      <div class="work-controls">
-        <div class="filters">
-          <button class="filter active" data-filter="all">All Work</button>
-          <button class="filter" data-filter="video">Video Editing</button>
-          <button class="filter" data-filter="motion">Motion Graphics</button>
-          <button class="filter" data-filter="design">Graphic Design</button>
-        </div>
+  <div class="work-controls">
+    <div class="filters">
+      <button class="filter active" data-filter="all">All Work</button>
+      <button class="filter" data-filter="video">Video Editing</button>
+      <button class="filter" data-filter="motion">Motion Graphics</button>
+      <button class="filter" data-filter="design">Graphic Design</button>
+    </div>
+    <input type="text" class="search" placeholder="Search projects..." />
+  </div>
 
-        <input type="text" class="search" placeholder="Search projects..." />
-      </div>
+  <div class="work-grid">
+    <!-- Repeat this card block for each video -->
+    <div class="work-card video" onclick="openModal('epXbTuBnzBQ')">
+      <img src="https://img.youtube.com/vi/epXbTuBnzBQ/hqdefault.jpg" alt="Thumbnail">
+      <h3>Love Aaj Kal – Chor Bazari Edit</h3>
+    </div>
 
-      <div class="work-grid">
-        <!-- CARD -->
-        <article class="work-card video">
-          <div class="thumb">
-            <span class="play">▶</span>
-          </div>
-          <h3>Brand Launch Campaign</h3>
-          <p>High-energy product launch video for tech startup</p>
-          <div class="tags">
-            <span>Commercial</span>
-            <span>Product</span>
-            <span>Social Media</span>
-          </div>
-        </article>
+    <div class="work-card motion" onclick="openModal('tLofo_485Qc')">
+      <img src="https://img.youtube.com/vi/tLofo_485Qc/hqdefault.jpg" alt="Thumbnail">
+      <h3>Alauddin Khilji – Historical Animation</h3>
+    </div>
 
-        <article class="work-card motion">
-          <div class="thumb">
-            <span class="play">▶</span>
-          </div>
-          <h3>Animated Logo Reveal</h3>
-          <p>Premium 3D logo animation for corporate brand</p>
-          <div class="tags">
-            <span>Motion Design</span>
-            <span>Branding</span>
-            <span>3D</span>
-          </div>
-        </article>
+    <div class="work-card motion" onclick="openModal('7-2duY6fdzo')">
+      <img src="https://img.youtube.com/vi/7-2duY6fdzo/hqdefault.jpg" alt="Thumbnail">
+      <h3>Chainsaw Man Edit</h3>
+    </div>
 
-        <article class="work-card design">
-          <div class="thumb">
-            <span class="play">▶</span>
-          </div>
-          <h3>Social Media Templates</h3>
-          <p>Complete Instagram feed redesign with templates</p>
-          <div class="tags">
-            <span>Design</span>
-            <span>Social Media</span>
-            <span>Templates</span>
-          </div>
-        </article>
+    <div class="work-card motion" onclick="openModal('v827BybYYxI')">
+      <img src="https://img.youtube.com/vi/v827BybYYxI/hqdefault.jpg" alt="Thumbnail">
+      <h3>Monster Energy – 3D VFX</h3>
+    </div>
 
-        <article class="work-card video">
-          <div class="thumb">
-            <span class="play">▶</span>
-          </div>
-          <h3>YouTube Documentary Edit</h3>
-          <p>45-minute documentary with advanced storytelling</p>
-          <div class="tags">
-            <span>Documentary</span>
-            <span>Long-form</span>
-            <span>YouTube</span>
-          </div>
-        </article>
+    <div class="work-card motion" onclick="openModal('oBuOLH0u2Rc')">
+      <img src="https://img.youtube.com/vi/oBuOLH0u2Rc/hqdefault.jpg" alt="Thumbnail">
+      <h3>AirPods Max 3D Animation</h3>
+    </div>
 
-        <article class="work-card motion">
-          <div class="thumb">
-            <span class="play">▶</span>
-          </div>
-          <h3>Explainer Animation</h3>
-          <p>SaaS product explainer with custom illustrations</p>
-          <div class="tags">
-            <span>Explainer</span>
-            <span>Animation</span>
-            <span>Corporate</span>
-          </div>
-        </article>
+    <div class="work-card motion" onclick="openModal('sx666WrQWtM')">
+      <img src="https://img.youtube.com/vi/sx666WrQWtM/hqdefault.jpg" alt="Thumbnail">
+      <h3>Veggie Car Project</h3>
+    </div>
+  </div>
 
-        <article class="work-card design">
-          <div class="thumb">
-            <span class="play">▶</span>
-          </div>
-          <h3>Event Poster Series</h3>
-          <p>Music festival promotional materials</p>
-          <div class="tags">
-            <span>Poster</span>
-            <span>Event</span>
-            <span>Print</span>
-          </div>
-        </article>
-      </div>
-    </section>
+  <!-- One reusable modal for all videos -->
+  <div class="video-modal" id="videoModal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <iframe
+        id="videoFrame"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</section>
+
+          
+          
+          
 
     <section class="about" id="about">
       <div class="about-container">
