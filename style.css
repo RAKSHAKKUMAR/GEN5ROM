@@ -23,6 +23,7 @@ body {
     "Helvetica Neue",
     Arial;
   color: #e6eef8;
+  scroll-behavior: smooth;
 }
 a {
   color: inherit;
@@ -507,12 +508,14 @@ spline-viewer {
 }
 
 /* CARD */
-.service-card {
+.service-card{
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0.05),
     rgba(255, 255, 255, 0.02)
   );
+  will-change: transform;
+  
   border-radius: 24px;
   padding: 32px;
   border: 1px solid rgba(255, 255, 255, 0.08);
