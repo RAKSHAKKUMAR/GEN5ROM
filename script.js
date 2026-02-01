@@ -94,31 +94,56 @@ searchInput.addEventListener('input', e => {
   });
 });
 
-
-// ✅ Featured Work Modal Logic (NEW)
+// ✅ Featured Work Modal Logic
 function openModal(videoId) {
   const modal = document.getElementById('videoModal');
   const iframe = document.getElementById('videoFrame');
 
-  iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+  if (!modal || !iframe) return;
+
+  iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
   modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
 }
 
 function closeModal() {
   const modal = document.getElementById('videoModal');
   const iframe = document.getElementById('videoFrame');
 
+  if (!modal || !iframe) return;
+
   iframe.src = '';
   modal.classList.remove('active');
+  document.body.style.overflow = 'auto';
 }
 
 // Close modal on outside click
 document.addEventListener('click', function (e) {
   const modal = document.getElementById('videoModal');
   const content = document.querySelector('.modal-content');
+  
   if (modal && modal.classList.contains('active') && !content.contains(e.target) && !e.target.closest('.work-card')) {
     closeModal();
   }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') {
+    closeModal();
+  }
+});
+
+// Work card cursor pointer
+const workCards = document.querySelectorAll('.work-card');
+workCards.forEach(card => {
+  card.style.cursor = 'pointer';
+  card.addEventListener('mouseover', () => {
+    card.style.opacity = '0.8';
+  });
+  card.addEventListener('mouseout', () => {
+    card.style.opacity = '1';
+  });
 });
 
 const navLinks = document.querySelectorAll('nav a[href^="#"]');
@@ -132,9 +157,57 @@ target.scrollIntoView({ behavior: 'smooth' });
 });
 });
 
+// Hamburger Menu Toggle
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+
+if (hamburger && mobileMenu) {
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+  });
+
+  // Close menu when a link is clicked
+  const mobileLinks = mobileMenu.querySelectorAll('a');
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      mobileMenu.classList.remove('active');
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+      hamburger.classList.remove('active');
+      mobileMenu.classList.remove('active');
+    }
+  });
+}
+
+// Spline Viewer Setup
+window.addEventListener('load', () => {
+  const splineViewer = document.querySelector('spline-viewer');
+  const loader = document.querySelector('.spline-loader');
+
+  if (splineViewer && loader) {
+    // Hide loader when viewer is ready
+    splineViewer.addEventListener('load', () => {
+      setTimeout(() => {
+        loader.classList.add('hidden');
+      }, 500);
+    });
+
+    // Fallback: hide loader after 8 seconds anyway
+    setTimeout(() => {
+      if (loader && !loader.classList.contains('hidden')) {
+        loader.classList.add('hidden');
+      }
+    }, 8000);
+  }
+});
 
 console.log("Scripts optimized and ready");
-
 
 // Logging for dev/debug
 console.log("About section loaded");
