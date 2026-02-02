@@ -290,7 +290,30 @@ p.desc {
 }
 
 /* ===== SHOWREEL ===== */
-.showreel {
+
+.showreel-container {
+  /* width: 400px;
+  height: 400px; */
+  position: relative;
+  padding-top: 56.25%; 
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  margin: 0 auto;
+  max-width: auto;
+}
+
+.showreel-embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 18px;
+}
+
+/* .showreel {
   height: 380px;
   border-radius: 18px;
   background: linear-gradient(180deg, rgba(139, 59, 255, 0.12), rgba(255, 110, 199, 0.06));
@@ -301,6 +324,8 @@ p.desc {
   position: relative;
   overflow: hidden;
 }
+
+
 
 .showreel .play {
   width: 84px;
@@ -335,7 +360,7 @@ p.desc {
   bottom: 14px;
   color: rgba(255, 255, 255, 0.25);
   font-size: 13px;
-}
+} */
 
 .hero-bg {
   position: absolute;
@@ -1242,6 +1267,7 @@ spline-viewer {
   .showreel {
     height: 300px;
   }
+
 
   h1 {
     font-size: 48px;

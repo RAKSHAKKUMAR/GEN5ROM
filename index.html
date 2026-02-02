@@ -5,11 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Harnarayan Portfolio</title>
     <!-- For standard .ico -->
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="/assets/harnarayan picass.png"
-    />
+    <link rel="icon" type="image/x-icon" href="/assets/harnarayan picass.png" />
 
     <!-- For .png -->
     <link
@@ -28,11 +24,10 @@
 
     <link rel="stylesheet" href="style.css" />
     <!-- Spline Viewer Script -->
-    
   </head>
   <body>
     <header class="navbar">
-        <!-- LEFT : BRAND -->
+      <!-- LEFT : BRAND -->
       <div class="navbar-left">
         <div class="logo-badge">
           <img
@@ -48,13 +43,13 @@
           <p>Creative Visual Artist</p>
         </div>
       </div>
-  <!-- CENTER : DESKTOP LINKS -->
+      <!-- CENTER : DESKTOP LINKS -->
       <nav class="navbar-center">
         <a href="#services">Services</a>
         <a href="#work">Work</a>
         <a href="#about">About</a>
       </nav>
-  <!-- RIGHT : DESKTOP ACTIONS -->
+      <!-- RIGHT : DESKTOP ACTIONS -->
       <div class="navbar-right">
         <a href="#contact" class="btn btn-outline">✉ Contact</a>
         <a href="#resume" class="btn btn-gradient">⬇ Resume</a>
@@ -78,7 +73,7 @@
     </header>
 
     <main class="hero">
-      <div>
+      <div class="hero-left">
         <span class="eyebadge">Available for Freelance &amp; Full-time</span>
         <h1>Creative Vision <span class="accent">Meets Motion</span></h1>
         <div class="lead">
@@ -93,52 +88,34 @@
         <div class="ctas">
           <button
             class="cta-primary"
-            onclick="
-              document
-                .getElementById('work')
-                .scrollIntoView({ behavior: 'smooth' })
-            "
+            onclick="document.getElementById('work').scrollIntoView({ behavior: 'smooth' })"
           >
             View My Work ➜
           </button>
           <button
             class="cta-ghost"
-            onclick="
-              location.href = 'mailto:hello@example.com?subject=Work%20Inquiry'
-            "
+            onclick="location.href = 'mailto:hello@example.com?subject=Work%20Inquiry'"
           >
             Let's Talk
           </button>
         </div>
       </div>
 
-      <div>
-        <div
-          class="showreel"
-          role="button"
-          aria-label="Open showreel"
-          tabindex="0"
-          id="openShowreel"
-        >
-          <!-- If you want the exact image from the design, place the screenshot file in the same folder and name it exactly: "Screenshot 2026-01-15 153042.png" -->
-          <img
-            src="assets/logo.png"
-            alt="Hero visual"
-            style="
-              position: absolute;
-              inset: 0;
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
-              opacity: 0.06;
-              pointer-events: none;
-            "
-          />
-          <div class="play" aria-hidden="true"></div>
-          <div class="label">Showreel Preview</div>
+      <div class="hero-right">
+        <div class="showreel-container">
+          <div class="showreel-embed">
+            <iframe
+              src="https://www.youtube.com/embed/7-2duY6fdzo?rel=0&autoplay=0&mute=1&showinfo=0&modestbranding=1"
+              title="Showreel Preview"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
         </div>
       </div>
 
+      <!-- background blur -->
       <div class="hero-bg" aria-hidden="true"></div>
     </main>
 
@@ -157,9 +134,9 @@
           url="https://prod.spline.design/bCzuLFEqzOSbl9ic/scene.splinecode"
           aria-label="Interactive 3D keyboard model"
         ></spline-viewer> -->
-        <!-- <div class="spline-container">
+    <!-- <div class="spline-container">
         </div> -->
-<!-- 
+    <!-- 
         <div class="spline-info">
           <p>
             💡 Tip: Click and drag to rotate • Scroll to zoom • Right-click to
