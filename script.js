@@ -1,13 +1,49 @@
 // Navbar scroll effect
-const navbar = document.querySelector('.navbar');
+// const navbar = document.querySelector('.navbar');
 
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 20) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
-  }
-});
+// window.addEventListener('scroll', () => {
+//   if (window.scrollY > 20) {
+//     navbar.classList.add('scrolled');
+//   } else {
+//     navbar.classList.remove('scrolled');
+//   }
+// });
+
+/* Navbar scroll effect */
+const navbar = document.querySelector('.navbar');
+const hamburger = document.querySelector('.hamburger');
+const mobileMenu = document.querySelector('.mobileMenu');
+
+/* Scroll effect (guarded) */
+if (navbar) {
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+  });
+}
+
+/* Hamburger toggle (guarded) */
+if (hamburger && mobileMenu) {
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+    // Ensure the CSS selector .mobile-menu.active matches (style.css uses both forms)
+    mobileMenu.classList.toggle('mobile-menu');
+
+    const isOpen = hamburger.classList.contains('active');
+    hamburger.setAttribute('aria-expanded', isOpen);
+  });
+
+  /* Close menu on mobile link click */
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      mobileMenu.classList.remove('active');
+      mobileMenu.classList.remove('mobile-menu');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
+
 
 // Spline viewer
 // <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.37/build/spline-viewer.js"></script>
@@ -84,15 +120,17 @@ filters.forEach(button => {
   });
 });
 
-// Search filter
-searchInput.addEventListener('input', e => {
-  const value = e.target.value.toLowerCase();
+// Search filter (guarded)
+if (searchInput) {
+  searchInput.addEventListener('input', e => {
+    const value = e.target.value.toLowerCase();
 
-  workCards.forEach(card => {
-    const text = card.innerText.toLowerCase();
-    card.style.display = text.includes(value) ? 'block' : 'none';
+    workCards.forEach(card => {
+      const text = card.innerText.toLowerCase();
+      card.style.display = text.includes(value) ? 'block' : 'none';
+    });
   });
-});
+}
 
 // ✅ Featured Work Modal Logic
 function openModal(videoId) {
@@ -135,81 +173,33 @@ document.addEventListener('keydown', function (e) {
 });
 
 // Work card cursor pointer
-const workCards = document.querySelectorAll('.work-card');
-workCards.forEach(card => {
-  card.style.cursor = 'pointer';
-  card.addEventListener('mouseover', () => {
-    card.style.opacity = '0.8';
+if (workCards && workCards.length) {
+  workCards.forEach(card => {
+    card.style.cursor = 'pointer';
+    card.addEventListener('mouseover', () => {
+      card.style.opacity = '0.8';
+    });
+    card.addEventListener('mouseout', () => {
+      card.style.opacity = '1';
+    });
   });
-  card.addEventListener('mouseout', () => {
-    card.style.opacity = '1';
-  });
-});
+}
 
 const navLinks = document.querySelectorAll('nav a[href^="#"]');
 navLinks.forEach(link => {
-link.addEventListener('click', function (e) {
-e.preventDefault();
-const target = document.querySelector(this.getAttribute('href'));
-if (target) {
-target.scrollIntoView({ behavior: 'smooth' });
-}
-});
-});
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
 
-// Hamburger Menu Toggle
-const hamburger = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobileMenu');
-
-if (hamburger && mobileMenu) {
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    mobileMenu.classList.toggle('active');
-  });
-
-  // Close menu when a link is clicked
-  const mobileLinks = mobileMenu.querySelectorAll('a');
-  mobileLinks.forEach(link => {
-    link.addEventListener('click', () => {
+    // If mobile menu is open, close it after clicking a nav link
+    if (hamburger && mobileMenu && hamburger.classList.contains('active')) {
       hamburger.classList.remove('active');
       mobileMenu.classList.remove('active');
-    });
-  });
-
-  // Close menu when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
-      hamburger.classList.remove('active');
-      mobileMenu.classList.remove('active');
+      mobileMenu.classList.remove('mobile-menu');
+      hamburger.setAttribute('aria-expanded', 'false');
     }
   });
-}
-
-// Spline Viewer Setup
-window.addEventListener('load', () => {
-  const splineViewer = document.querySelector('spline-viewer');
-  const loader = document.querySelector('.spline-loader');
-
-  if (splineViewer && loader) {
-    // Hide loader when viewer is ready
-    splineViewer.addEventListener('load', () => {
-      setTimeout(() => {
-        loader.classList.add('hidden');
-      }, 500);
-    });
-
-    // Fallback: hide loader after 8 seconds anyway
-    setTimeout(() => {
-      if (loader && !loader.classList.contains('hidden')) {
-        loader.classList.add('hidden');
-      }
-    }, 8000);
-  }
 });
-
-console.log("Scripts optimized and ready");
-
-// Logging for dev/debug
-console.log("About section loaded");
-console.log("Contact section ready");
-console.log("Footer loaded");

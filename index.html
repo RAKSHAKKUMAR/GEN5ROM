@@ -28,14 +28,18 @@
 
     <link rel="stylesheet" href="style.css" />
     <!-- Spline Viewer Script -->
-    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.37/build/spline-viewer.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/@splinetool/viewer@1.12.37/build/spline-viewer.js"
+    ></script>
   </head>
   <body>
     <header class="navbar">
+        <!-- LEFT : BRAND -->
       <div class="navbar-left">
         <div class="logo-badge">
           <img
-            src="/assets/Screenshot 2026-01-22 113618.png"
+            src="/assets/logo.png"
             alt="logo"
             class="logo-img"
             width="100"
@@ -47,16 +51,16 @@
           <p>Creative Visual Artist</p>
         </div>
       </div>
-
+  <!-- CENTER : DESKTOP LINKS -->
       <nav class="navbar-center">
         <a href="#services">Services</a>
         <a href="#work">Work</a>
         <a href="#about">About</a>
       </nav>
-
+  <!-- RIGHT : DESKTOP ACTIONS -->
       <div class="navbar-right">
-        <a href="#contact"><button class="btn-outline">✉ Contact</button></a>
-        <a href=""><button class="btn-gradient">⬇ Resume</button></a>
+        <a href="#contact" class="btn btn-outline">✉ Contact</a>
+        <a href="#resume" class="btn btn-gradient">⬇ Resume</a>
       </div>
 
       <!-- Hamburger Menu Button -->
@@ -67,11 +71,12 @@
       </button>
 
       <!-- Mobile Menu -->
-      <nav class="mobile-menu" id="mobileMenu">
+      <nav class="mobileMenu" id="mobileMenu">
         <a href="#services">Services</a>
         <a href="#work">Work</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
+        <a href="#resume">Resume</a>
       </nav>
     </header>
 
@@ -120,7 +125,7 @@
         >
           <!-- If you want the exact image from the design, place the screenshot file in the same folder and name it exactly: "Screenshot 2026-01-15 153042.png" -->
           <img
-            src="Screenshot 2026-01-15 153042.png"
+            src="assets/logo.png"
             alt="Hero visual"
             style="
               position: absolute;
@@ -146,8 +151,8 @@
         <header class="spline-header">
           <h2>Interactive <span>3D</span> Showcase</h2>
           <p>
-            Explore my interactive 3D keyboard model — drag, rotate, and zoom
-            to experience the design in full detail.
+            Explore my interactive 3D keyboard model — drag, rotate, and zoom to
+            experience the design in full detail.
           </p>
         </header>
 
@@ -159,13 +164,13 @@
         </div>
 
         <div class="spline-info">
-          <p>💡 Tip: Click and drag to rotate • Scroll to zoom • Right-click to pan</p>
+          <p>
+            💡 Tip: Click and drag to rotate • Scroll to zoom • Right-click to
+            pan
+          </p>
         </div>
       </div>
     </section>
-
-    
-  
 
     <section class="info-section">
       <div class="info-container">
@@ -179,7 +184,8 @@
           <div class="info-icon">🎨</div>
           <p class="info-label">Tools</p>
           <h4 class="info-text">
-            After Effect, Premiere Pro, Photoshop, Illustrator, DaVinci, Blender 3D, Spline 3D
+            After Effect, Premiere Pro, Photoshop, Illustrator, DaVinci, Blender
+            3D, Spline 3D
           </h4>
         </div>
 
@@ -274,108 +280,233 @@
 </section> -->
 
     <section class="work" id="work">
-  <header class="work-header">
-    <h2>Featured <span>Work</span></h2>
-    <p>A selection of projects that showcase my creative range</p>
-  </header>
+      <header class="work-header">
+        <h2>Featured <span>Work</span></h2>
+        <p>A selection of projects that showcase my creative range</p>
+      </header>
 
-  <div class="work-controls">
-    <div class="filters">
-      <button class="filter active" data-filter="all">All Work</button>
-      <button class="filter" data-filter="video">Video Editing</button>
-      <button class="filter" data-filter="motion">Motion Graphics</button>
-      <button class="filter" data-filter="design">Graphic Design</button>
-    </div>
-    <input type="text" class="search" placeholder="Search projects..." />
-  </div>
+      <div class="work-controls">
+        <div class="filters">
+          <button class="filter active" data-filter="all">All Work</button>
+          <button class="filter" data-filter="video">Video Editing</button>
+          <button class="filter" data-filter="motion">Motion Graphics</button>
+          <button class="filter" data-filter="design">Graphic Design</button>
+        </div>
+        <input type="text" class="search" placeholder="Search projects..." />
+      </div>
 
-  <div class="work-grid">
-    <!-- Each card now uses data-video and data-title (JS reads it) -->
-    <div class="work-card video" data-video="epXbTuBnzBQ" data-title="Love Aaj Kal – Chor Bazari Edit" onclick="openModal(this.dataset.video)">
-      <img loading="lazy" src="https://img.youtube.com/vi/epXbTuBnzBQ/hqdefault.jpg" alt="Love Aaj Kal Thumbnail" />
-      <h3>Love Aaj Kal – Chor Bazari Edit</h3>
-    </div>
+      <div class="work-grid">
+        <!-- Each card now uses data-video and data-title (JS reads it) -->
+        <div
+          class="work-card video"
+          data-video="epXbTuBnzBQ"
+          data-title="Love Aaj Kal – Chor Bazari Edit"
+          onclick="openModal(this.dataset.video)"
+        >
+          <img
+            loading="lazy"
+            src="https://img.youtube.com/vi/epXbTuBnzBQ/hqdefault.jpg"
+            alt="Love Aaj Kal Thumbnail"
+          />
+          <h3>Love Aaj Kal – Chor Bazari Edit</h3>
+        </div>
 
-    <div class="work-card motion" data-video="tLofo_485Qc" data-title="Alauddin Khilji – Historical Animation" onclick="openModal(this.dataset.video)">
-      <img loading="lazy" src="https://img.youtube.com/vi/tLofo_485Qc/hqdefault.jpg" alt="Alauddin Khilji Thumbnail" />
-      <h3>Alauddin Khilji – Historical Animation</h3>
-    </div>
+        <div
+          class="work-card motion"
+          data-video="tLofo_485Qc"
+          data-title="Alauddin Khilji – Historical Animation"
+          onclick="openModal(this.dataset.video)"
+        >
+          <img
+            loading="lazy"
+            src="https://img.youtube.com/vi/tLofo_485Qc/hqdefault.jpg"
+            alt="Alauddin Khilji Thumbnail"
+          />
+          <h3>Alauddin Khilji – Historical Animation</h3>
+        </div>
 
-    <div class="work-card motion" data-video="7-2duY6fdzo" data-title="Chainsaw Man Edit" onclick="openModal(this.dataset.video)">
-      <img loading="lazy" src="https://img.youtube.com/vi/7-2duY6fdzo/hqdefault.jpg" alt="Chainsaw Man Thumbnail" />
-      <h3>Chainsaw Man Edit</h3>
-    </div>
+        <div
+          class="work-card motion"
+          data-video="7-2duY6fdzo"
+          data-title="Chainsaw Man Edit"
+          onclick="openModal(this.dataset.video)"
+        >
+          <img
+            loading="lazy"
+            src="https://img.youtube.com/vi/7-2duY6fdzo/hqdefault.jpg"
+            alt="Chainsaw Man Thumbnail"
+          />
+          <h3>Chainsaw Man Edit</h3>
+        </div>
 
-    <div class="work-card motion" data-video="v827BybYYxI" data-title="Monster Energy – 3D VFX" onclick="openModal(this.dataset.video)">
-      <img loading="lazy" src="https://img.youtube.com/vi/v827BybYYxI/hqdefault.jpg" alt="Monster Energy Thumbnail" />
-      <h3>Monster Energy – 3D VFX</h3>
-    </div>
+        <div
+          class="work-card motion"
+          data-video="v827BybYYxI"
+          data-title="Monster Energy – 3D VFX"
+          onclick="openModal(this.dataset.video)"
+        >
+          <img
+            loading="lazy"
+            src="https://img.youtube.com/vi/v827BybYYxI/hqdefault.jpg"
+            alt="Monster Energy Thumbnail"
+          />
+          <h3>Monster Energy – 3D VFX</h3>
+        </div>
 
-    <div class="work-card motion" data-video="oBuOLH0u2Rc" data-title="AirPods Max 3D Animation – Inspired Recreation" onclick="openModal(this.dataset.video)">
-      <img loading="lazy" src="https://img.youtube.com/vi/oBuOLH0u2Rc/hqdefault.jpg" alt="AirPods Max Thumbnail" />
-      <h3>AirPods Max 3D Animation – Inspired Recreation</h3>
-    </div>
+        <div
+          class="work-card motion"
+          data-video="oBuOLH0u2Rc"
+          data-title="AirPods Max 3D Animation – Inspired Recreation"
+          onclick="openModal(this.dataset.video)"
+        >
+          <img
+            loading="lazy"
+            src="https://img.youtube.com/vi/oBuOLH0u2Rc/hqdefault.jpg"
+            alt="AirPods Max Thumbnail"
+          />
+          <h3>AirPods Max 3D Animation – Inspired Recreation</h3>
+        </div>
 
-    <div class="work-card motion" data-video="sx666WrQWtM" data-title="Veggie Car Project" onclick="openModal(this.dataset.video)">
-      <img loading="lazy" src="https://img.youtube.com/vi/sx666WrQWtM/hqdefault.jpg" alt="Veggie Car Thumbnail" />
-      <h3>Veggie Car Project</h3>
-    </div>
+        <div
+          class="work-card motion"
+          data-video="sx666WrQWtM"
+          data-title="Veggie Car Project"
+          onclick="openModal(this.dataset.video)"
+        >
+          <img
+            loading="lazy"
+            src="https://img.youtube.com/vi/sx666WrQWtM/hqdefault.jpg"
+            alt="Veggie Car Thumbnail"
+          />
+          <h3>Veggie Car Project</h3>
+        </div>
 
-    <div class="work-card motion" data-video="AF70qwFW_jQ" data-title="Khoya Khoya Chand — a soft romantic edit" onclick="openModal(this.dataset.video)">
-      <img loading="lazy" src="https://img.youtube.com/vi/AF70qwFW_jQ/hqdefault.jpg" alt="Khoya Khoya Chand Thumbnail" />
-      <h3>Khoya Khoya Chand — a soft romantic edit.</h3>
-    </div>
+        <div
+          class="work-card motion"
+          data-video="AF70qwFW_jQ"
+          data-title="Khoya Khoya Chand — a soft romantic edit"
+          onclick="openModal(this.dataset.video)"
+        >
+          <img
+            loading="lazy"
+            src="https://img.youtube.com/vi/AF70qwFW_jQ/hqdefault.jpg"
+            alt="Khoya Khoya Chand Thumbnail"
+          />
+          <h3>Khoya Khoya Chand — a soft romantic edit.</h3>
+        </div>
 
-    <div class="work-card motion" data-video="fe16Bze8rHw" data-title="Alya Sometimes Hides Her Feelings in Russian – Motion Edit" onclick="openModal(this.dataset.video)">
-      <img loading="lazy" src="https://img.youtube.com/vi/fe16Bze8rHw/hqdefault.jpg" alt="Alya Edit Thumbnail" />
-      <h3>Alya Sometimes Hides Her Feelings in Russian — Motion Edit</h3>
-    </div>
+        <div
+          class="work-card motion"
+          data-video="fe16Bze8rHw"
+          data-title="Alya Sometimes Hides Her Feelings in Russian – Motion Edit"
+          onclick="openModal(this.dataset.video)"
+        >
+          <img
+            loading="lazy"
+            src="https://img.youtube.com/vi/fe16Bze8rHw/hqdefault.jpg"
+            alt="Alya Edit Thumbnail"
+          />
+          <h3>Alya Sometimes Hides Her Feelings in Russian — Motion Edit</h3>
+        </div>
 
-    <div class="work-card motion" data-video="XrtxCAQ_xc0" data-title="Blue Box – High-Octane Motion Graphics Edit" onclick="openModal(this.dataset.video)">
-      <img loading="lazy" src="https://img.youtube.com/vi/XrtxCAQ_xc0/hqdefault.jpg" alt="Blue Box Thumbnail" />
-      <h3>Blue Box – High-Octane Motion Graphics Edit</h3>
-    </div>
+        <div
+          class="work-card motion"
+          data-video="XrtxCAQ_xc0"
+          data-title="Blue Box – High-Octane Motion Graphics Edit"
+          onclick="openModal(this.dataset.video)"
+        >
+          <img
+            loading="lazy"
+            src="https://img.youtube.com/vi/XrtxCAQ_xc0/hqdefault.jpg"
+            alt="Blue Box Thumbnail"
+          />
+          <h3>Blue Box – High-Octane Motion Graphics Edit</h3>
+        </div>
 
-    <div class="work-card motion" data-video="r5inyY_J-b8" data-title="Zolios – Language AI Motion Graphics" onclick="openModal(this.dataset.video)">
-      <img loading="lazy" src="https://img.youtube.com/vi/r5inyY_J-b8/hqdefault.jpg" alt="Zolios Thumbnail" />
-      <h3>Zolios – Language AI Motion Graphics Recreation</h3>
-    </div>
+        <div
+          class="work-card motion"
+          data-video="r5inyY_J-b8"
+          data-title="Zolios – Language AI Motion Graphics"
+          onclick="openModal(this.dataset.video)"
+        >
+          <img
+            loading="lazy"
+            src="https://img.youtube.com/vi/r5inyY_J-b8/hqdefault.jpg"
+            alt="Zolios Thumbnail"
+          />
+          <h3>Zolios – Language AI Motion Graphics Recreation</h3>
+        </div>
 
-    <div class="work-card motion" data-video="pNjk30C3arU" data-title="The Ascent of Insight – Original Motion Graphics" onclick="openModal(this.dataset.video)">
-      <img loading="lazy" src="https://img.youtube.com/vi/pNjk30C3arU/hqdefault.jpg" alt="Ascent Insight Thumbnail" />
-      <h3>The Ascent of Insight– Original Motion Graphics Edit</h3>
-    </div>
+        <div
+          class="work-card motion"
+          data-video="pNjk30C3arU"
+          data-title="The Ascent of Insight – Original Motion Graphics"
+          onclick="openModal(this.dataset.video)"
+        >
+          <img
+            loading="lazy"
+            src="https://img.youtube.com/vi/pNjk30C3arU/hqdefault.jpg"
+            alt="Ascent Insight Thumbnail"
+          />
+          <h3>The Ascent of Insight– Original Motion Graphics Edit</h3>
+        </div>
 
-    <div class="work-card motion" data-video="4NFWINCtGUE" data-title="Original Motion Graphics Edit" onclick="openModal(this.dataset.video)">
-      <img loading="lazy" src="https://img.youtube.com/vi/4NFWINCtGUE/hqdefault.jpg" alt="Original Edit Thumbnail" />
-      <h3>Original Motion Graphics Edit</h3>
-    </div>
+        <div
+          class="work-card motion"
+          data-video="4NFWINCtGUE"
+          data-title="Original Motion Graphics Edit"
+          onclick="openModal(this.dataset.video)"
+        >
+          <img
+            loading="lazy"
+            src="https://img.youtube.com/vi/4NFWINCtGUE/hqdefault.jpg"
+            alt="Original Edit Thumbnail"
+          />
+          <h3>Original Motion Graphics Edit</h3>
+        </div>
 
-    <div class="work-card motion" data-video="KgMlcLt7Mw0" data-title="Page-Ripped Animation" onclick="openModal(this.dataset.video)">
-      <img loading="lazy" src="https://img.youtube.com/vi/KgMlcLt7Mw0/hqdefault.jpg" alt="Page Ripped Animation Thumbnail" />
-      <h3>Page-Ripped Animation</h3>
-    </div>
+        <div
+          class="work-card motion"
+          data-video="KgMlcLt7Mw0"
+          data-title="Page-Ripped Animation"
+          onclick="openModal(this.dataset.video)"
+        >
+          <img
+            loading="lazy"
+            src="https://img.youtube.com/vi/KgMlcLt7Mw0/hqdefault.jpg"
+            alt="Page Ripped Animation Thumbnail"
+          />
+          <h3>Page-Ripped Animation</h3>
+        </div>
 
-    <div class="work-card motion" data-video="AR3wvCxcXAk" data-title="Viral Motion Graphics Tunnel Scene" onclick="openModal(this.dataset.video)">
-      <img loading="lazy" src="https://img.youtube.com/vi/AR3wvCxcXAk/hqdefault.jpg" alt="Tunnel Scene Thumbnail" />
-      <h3>Viral Motion Graphics Tunnel Scene – Full Visual Experience</h3>
-    </div>
-  </div>
+        <div
+          class="work-card motion"
+          data-video="AR3wvCxcXAk"
+          data-title="Viral Motion Graphics Tunnel Scene"
+          onclick="openModal(this.dataset.video)"
+        >
+          <img
+            loading="lazy"
+            src="https://img.youtube.com/vi/AR3wvCxcXAk/hqdefault.jpg"
+            alt="Tunnel Scene Thumbnail"
+          />
+          <h3>Viral Motion Graphics Tunnel Scene – Full Visual Experience</h3>
+        </div>
+      </div>
 
-  <!-- One reusable modal for all videos -->
-  <div class="video-modal" id="videoModal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <iframe
-        id="videoFrame"
-        frameborder="0"
-        allow="autoplay; encrypted-media"
-        allowfullscreen
-      ></iframe>
-    </div>
-  </div>
-</section>
-
+      <!-- One reusable modal for all videos -->
+      <div class="video-modal" id="videoModal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <iframe
+            id="videoFrame"
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </section>
 
     <section class="about" id="about">
       <div class="about-container">
@@ -390,25 +521,23 @@
           </div>
           <div class="about-content">
             <div class="about-me">
-            <h2>About <span>Me</span></h2></div>
+              <h2>About <span>Me</span></h2>
+            </div>
 
             <div class="about-text">
-            <p>
-              I'm a Delhi-based motion graphic designer and video editor with 1+
-              years of experience creating cinematic visuals and engaging
-              digital stories. I work with After Effects, Premiere Pro, and
-              DaVinci Resolve to deliver polished motion graphics, edits, and
-              audio-synced content.
+              <p>
+                I'm a Delhi-based motion graphic designer and video editor with
+                1+ years of experience creating cinematic visuals and engaging
+                digital stories. I work with After Effects, Premiere Pro, and
+                DaVinci Resolve to deliver polished motion graphics, edits, and
+                audio-synced content. I combine technical skill with creative
+                storytelling and a sharp eye for detail. I enjoy collaborating
+                with teams and brands, delivering high-quality work with fast
+                turnaround, and I'm available for freelance, contract, and
+                full-time roles.
+              </p>
 
-               I combine technical skill with creative storytelling and a sharp
-              eye for detail. I enjoy collaborating with teams and brands,
-              delivering high-quality work with fast turnaround, and I'm
-              available for freelance, contract, and full-time roles.
-            </p>
-
-            <p>
-             
-            </p>
+              <p></p>
             </div>
 
             <!-- STATS -->
@@ -519,13 +648,15 @@
 
     <footer class="footer">
       <div class="footer-top">
-        <div class="footer-brand">
-          <div class="brand-badge">Gen5</div>
+        <!-- <div class="footer-brand">
+          <div class="brand-badge">
+            <img src="/assets/logo.png" alt="">
+          </div>
           <div class="brand-text">
             <h4>Harnarayan</h4>
             <p>Motion Graphics Designer · Video Editor</p>
           </div>
-        </div>
+        </div> -->
 
         <div class="footer-center">
           Crafted with <span class="heart">♥</span> © 2024 All rights reserved
@@ -539,8 +670,7 @@
       </div>
 
       <div class="footer-bottom">
-        This portfolio showcases professional creative work. All project
-        examples are placeholders and can be replaced with actual work.
+        This portfolio showcases professional creative work by Harnarayan.
       </div>
     </footer>
     <script src="script.js" defer></script>
