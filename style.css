@@ -46,7 +46,9 @@ a {
   justify-content: space-between;
   padding: 20px 80px;
   background: rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px); /* For Safari/iOS */
+  backdrop-filter: blur(14px);         /* For modern browsers */
+
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
@@ -385,7 +387,7 @@ p.desc {
   line-height: 1.6;
 }
 
-.spline-container {
+/* .spline-container {
   position: relative;
   width: 100%;
   max-width: 1280px;
@@ -397,6 +399,11 @@ p.desc {
   border: 1px solid rgba(139, 59, 255, 0.2);
   box-shadow: 0 0 60px rgba(139, 59, 255, 0.1), inset 0 0 60px rgba(139, 59, 255, 0.03);
   transition: box-shadow 0.3s ease;
+} */
+
+.spline-main{
+  width: 100%;
+  height: 100%;
 }
 
 .spline-container:hover {
@@ -418,6 +425,7 @@ spline-viewer {
   justify-content: center;
   gap: 16px;
   background: rgba(5, 4, 5, 0.4);
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   pointer-events: none;
   opacity: 1;
@@ -761,6 +769,7 @@ spline-viewer {
   z-index: 9999;
   padding: 20px;
   transition: opacity 220ms ease;
+  -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
 }
 

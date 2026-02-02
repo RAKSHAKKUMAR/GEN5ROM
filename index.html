@@ -28,10 +28,7 @@
 
     <link rel="stylesheet" href="style.css" />
     <!-- Spline Viewer Script -->
-    <script
-      type="module"
-      src="https://unpkg.com/@splinetool/viewer@1.12.37/build/spline-viewer.js"
-    ></script>
+    
   </head>
   <body>
     <header class="navbar">
@@ -156,12 +153,12 @@
           </p>
         </header>
 
-        <div class="spline-container">
-          <spline-viewer
-            url="https://prod.spline.design/bCzuLFEqzOSbl9ic/scene.splinecode"
-            aria-label="Interactive 3D keyboard model"
-          ></spline-viewer>
-        </div>
+        <spline-viewer class="spline-main"
+          url="https://prod.spline.design/bCzuLFEqzOSbl9ic/scene.splinecode"
+          aria-label="Interactive 3D keyboard model"
+        ></spline-viewer>
+        <!-- <div class="spline-container">
+        </div> -->
 
         <div class="spline-info">
           <p>
@@ -673,6 +670,10 @@
         This portfolio showcases professional creative work by Harnarayan.
       </div>
     </footer>
+    <script
+      type="module"
+      src="https://unpkg.com/@splinetool/viewer@1.12.37/build/spline-viewer.js"
+    ></script>`
     <script src="script.js" defer></script>
   </body>
 </html>
