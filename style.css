@@ -904,7 +904,7 @@ spline-viewer {
 
 .about-img-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: start;
 }
 
 .about-img {
