@@ -79,6 +79,26 @@ a {
   object-fit: cover;
 }
 
+.logo-text{
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-text h4{
+font-size: 22px;
+font-family: 'Poppins', sans-serif;
+font-weight: 600;
+padding-left: 15px;
+padding-top: 2px;
+}
+
+.logo-text p{
+  font-size: 16px;
+  color: #d1d5db;
+  padding-left: 15px;
+  margin-top: -10px;
+}
+
 /* ===== CENTER ===== */
 .navbar-center a {
   margin: 0 18px;
@@ -780,6 +800,97 @@ spline-viewer {
   margin: 0;
 }
 
+/* Clean layout for the secondary design group */
+.work-card-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 1400px;
+  margin: 30px auto 0;
+  padding: 0 6px;
+}
+
+.work-card-group .work-card img {
+  height: 180px;
+  object-fit: cover;
+  width: 100%;
+  display: block;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.work-card-group .work-card:hover img {
+  transform: scale(1.03);
+  opacity: 0.95;
+}
+
+/* Image lightbox modal */
+.image-modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 10000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 160ms ease;
+}
+
+.image-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.image-modal-content {
+  position: relative;
+  max-width: 92%;
+  max-height: 92%;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-modal img {
+  max-width: 100%;
+  max-height: 80vh;
+  display: block;
+}
+
+.image-modal .image-caption {
+  color: #d1d5db;
+  font-size: 14px;
+  padding: 10px 14px;
+  text-align: center;
+  background: rgba(255,255,255,0.02);
+  width: 100%;
+}
+
+.image-modal .close-image {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  background: rgba(0,0,0,0.5);
+  border: none;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 22px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+/* Ensure mobile menu toggles work with existing markup */
+.mobileMenu.active {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
 /* ===== VIDEO MODAL ===== */
 .video-modal {
   display: none;
@@ -1351,7 +1462,8 @@ spline-viewer {
   }
 
   .logo-text h4 {
-    font-size: 13px;
+    font-size: 20px;
+    font-weight: 800;
   }
 
   .logo-text p {

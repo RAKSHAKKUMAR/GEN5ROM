@@ -11,8 +11,8 @@
 
 /* Navbar scroll effect */
 const navbar = document.querySelector('.navbar');
-const hamburger = document.querySelector('.hamburger');
-const mobileMenu = document.querySelector('.mobileMenu');
+const hamburger = document.querySelector('#hamburger');
+const mobileMenu = document.querySelector('#mobileMenu');
 
 /* Scroll effect (guarded) */
 if (navbar) {
@@ -24,13 +24,10 @@ if (navbar) {
 /* Hamburger toggle (guarded) */
 if (hamburger && mobileMenu) {
   hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    mobileMenu.classList.toggle('active');
-    // Ensure the CSS selector .mobile-menu.active matches (style.css uses both forms)
-    mobileMenu.classList.toggle('mobile-menu');
-
-    const isOpen = hamburger.classList.contains('active');
-    hamburger.setAttribute('aria-expanded', isOpen);
+    const isOpen = !hamburger.classList.contains('active');
+    hamburger.classList.toggle('active', isOpen);
+    mobileMenu.classList.toggle('active', isOpen);
+    hamburger.setAttribute('aria-expanded', String(isOpen));
   });
 
   /* Close menu on mobile link click */
@@ -38,7 +35,6 @@ if (hamburger && mobileMenu) {
     link.addEventListener('click', () => {
       hamburger.classList.remove('active');
       mobileMenu.classList.remove('active');
-      mobileMenu.classList.remove('mobile-menu');
       hamburger.setAttribute('aria-expanded', 'false');
     });
   });
@@ -159,7 +155,11 @@ function closeModal() {
 document.addEventListener('click', function (e) {
   const modal = document.getElementById('videoModal');
   const content = document.querySelector('.modal-content');
-  
+  const imageModalEl = document.getElementById('imageModal');
+
+  // If the click is inside the image modal, ignore (don't close video)
+  if (imageModalEl && imageModalEl.contains(e.target)) return;
+
   if (modal && modal.classList.contains('active') && !content.contains(e.target) && !e.target.closest('.work-card')) {
     closeModal();
   }
@@ -168,7 +168,9 @@ document.addEventListener('click', function (e) {
 // Close modal with Escape key
 document.addEventListener('keydown', function (e) {
   if (e.key === 'Escape') {
+    // Close video modal and image modal if open
     closeModal();
+    if (typeof closeImageModal === 'function') closeImageModal();
   }
 });
 
@@ -182,6 +184,53 @@ if (workCards && workCards.length) {
     card.addEventListener('mouseout', () => {
       card.style.opacity = '1';
     });
+  });
+}
+
+// Image lightbox modal logic for design images
+const imageModal = document.getElementById('imageModal');
+const modalImage = document.getElementById('modalImage');
+const imageCaption = document.getElementById('imageCaption');
+const closeImage = document.getElementById('closeImage');
+
+function openImageModal(src, caption) {
+  if (!imageModal || !modalImage) return;
+  modalImage.src = src;
+  imageCaption.textContent = caption || '';
+  imageModal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeImageModal() {
+  if (!imageModal || !modalImage) return;
+  imageModal.classList.remove('active');
+  modalImage.src = '';
+  document.body.style.overflow = 'auto';
+}
+
+document.querySelectorAll('.work-card img').forEach(img => {
+  img.style.cursor = 'pointer';
+  img.addEventListener('click', (e) => {
+    const card = img.closest('.work-card');
+    const isVideoCard = card && (card.dataset.video || card.classList.contains('video'));
+
+    // If this image belongs to a video work card, do not open the image lightbox.
+    // Let the parent onclick/openModal (inline) handle playing the video.
+    if (isVideoCard) return;
+
+    // Prevent the click from bubbling to parent handlers (avoid playing video)
+    e.stopPropagation();
+    e.preventDefault();
+
+    const caption = card ? (card.dataset.title || card.querySelector('h3')?.innerText || '') : '';
+    openImageModal(img.src, caption);
+  });
+});
+
+if (closeImage) closeImage.addEventListener('click', closeImageModal);
+if (imageModal) {
+  imageModal.addEventListener('click', (e) => {
+    if (e.target === imageModal) closeImageModal();
   });
 }
 
