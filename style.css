@@ -26,6 +26,7 @@ body {
     Arial;
   color: #e6eef8;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -610,6 +611,8 @@ spline-viewer {
   padding: 32px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   transition: all 0.3s ease;
+  /* display: flex;
+  justify-content: center; */
 }
 
 .service-card:hover {
@@ -627,6 +630,15 @@ spline-viewer {
   border-radius: 16px;
   margin-bottom: 24px;
   background: linear-gradient(135deg, #a855f7, #ec4899);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-card .icon .video{
+  width: 24px;
+  height: 24px;
+  color: white;
 }
 
 .icon.motion {
@@ -1885,4 +1897,37 @@ spline-viewer {
   .brand-text p {
     font-size: 12px;
   }
+}
+
+/* ===== Global Scroll Reveal ===== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: 
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-card,
+.work-card,
+.stat-card,
+.info-card {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.7s ease;
+}
+
+.service-card.active,
+.work-card.active,
+.stat-card.active,
+.info-card.active {
+  opacity: 1;
+  transform: translateY(0);
 }

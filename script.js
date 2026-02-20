@@ -252,3 +252,25 @@ navLinks.forEach(link => {
     }
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const elements = document.querySelectorAll(
+  ".reveal, .service-card, .work-card, .stat-card, .info-card"
+);
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+          observer.unobserve(entry.target); // animate once only
+        }
+      });
+    },
+    {
+      threshold: 0.15,
+    }
+  );
+
+  elements.forEach((el) => observer.observe(el));
+});
